@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Welcome to my Portfolio</title>
@@ -50,11 +49,59 @@
 
         /* Experience Box */
         .experience-box {
-            /* background-color: #c6c5be; */
             padding: 1.5em;
             border-radius: 8px;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .experience-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .experience-step {
+                font-size: 1em;
+            }
+
+            .tick-circle {
+                width: 25px;
+                height: 25px;
+                font-size: 1.2em;
+                margin-right: 5px;
+            }
+
+            .step-line {
+                height: 2px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .lg-heading {
+                font-size: 2em;
+                text-align: center;
+            }
+
+            .sm-heading {
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+            .experience-step {
+                font-size: 0.9em;
+            }
+
+            .tick-circle {
+                width: 20px;
+                height: 20px;
+                font-size: 1em;
+            }
+
+            .step-line {
+                height: 1px;
+            }
         }
     </style>
 </head>
@@ -94,8 +141,7 @@
         <h1 class="lg-heading">
             My <span class="text-secondary">Experience</span>
         </h1>
-        <h2 class="sm-heading">Completed an intensive 1year MERN stack
-            development program!</h2>
+        <h2 class="sm-heading">Completed an intensive 1year MERN stack development program!</h2>
 
         <!-- Stepper Section -->
         <div class="experience-container">
@@ -125,32 +171,23 @@
                     contributing to enhanced user experiences.
                 </li>
                 <li>
-                    Designed and implemented <strong>RESTful APIs</strong>, ensuring
-                    seamless frontend-backend communication with a focus on
-                    performance and scalability.
+                    Designed and implemented <strong>RESTful APIs</strong>, ensuring seamless frontend-backend communication with a focus on performance and scalability.
                 </li>
                 <li>
-                    Optimized <strong>MongoDB queries</strong> to handle large
-                    datasets and improve database performance, gaining hands-on
-                    experience with database scalability.
+                    Optimized <strong>MongoDB queries</strong> to handle large datasets and improve database performance, gaining hands-on experience with database scalability.
                 </li>
                 <li>
                     Tackled errors and issues by developing strategies for
-                    <strong>error handling</strong> and improving problem-solving
-                    skills.
+                    <strong>error handling</strong> and improving problem-solving skills.
                 </li>
                 <li>
-                    Deployed projects using <strong>GitHub Pages (github.io)</strong>
-                    and <strong>Vercel app</strong>,
-                    ensuring seamless delivery and accessibility.
+                    Deployed projects using <strong>GitHub Pages (github.io)</strong> and <strong>Vercel app</strong>, ensuring seamless delivery and accessibility.
                 </li>
                 <li>
-                    Wrote clean, modular, and maintainable code with a focus on
-                    scalability and project sustainability.
+                    Wrote clean, modular, and maintainable code with a focus on scalability and project sustainability.
                 </li>
                 <li>
-                    Gained experience in full-stack development from frontend UI
-                    components to backend logic and database management.
+                    Gained experience in full-stack development from frontend UI components to backend logic and database management.
                 </li>
             </ul>
         </div>
