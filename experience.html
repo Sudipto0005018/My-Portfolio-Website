@@ -1,202 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Welcome to my Portfolio</title>
     <style>
-        /* Experience Stepper Styling */
+      /* Experience Stepper Styling */
+      .experience-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        margin-bottom: 2em;
+        flex-wrap: wrap;
+      }
+
+      .experience-step {
+        display: flex;
+        align-items: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #fc6f4c;
+        position: relative;
+      }
+
+      /* Circular Tick Mark */
+      .tick-circle {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #141515;
+        color: #fff;
+        font-size: 1.5em;
+        margin-right: 10px;
+      }
+
+      /* Horizontal Line */
+      .step-line {
+        flex-grow: 1;
+        height: 4px;
+        background-color: #d8421c;
+      }
+
+      /* Experience Box */
+      .experience-box {
+        padding: 1.5em;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 768px) {
         .experience-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2em;
-            margin-bottom: 2em;
-            flex-wrap: wrap;
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         .experience-step {
-            display: flex;
-            align-items: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #fc6f4c;
-            position: relative;
+          font-size: 1em;
         }
 
-        /* Circular Tick Mark */
         .tick-circle {
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: #141515;
-            color: #fff;
-            font-size: 1.5em;
-            margin-right: 10px;
+          width: 25px;
+          height: 25px;
+          font-size: 1.2em;
+          margin-right: 5px;
         }
 
-        /* Horizontal Line */
         .step-line {
-            flex-grow: 1;
-            height: 4px;
-            background-color: #d8421c;
+          height: 2px;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 542px) {
+        .lg-heading {
+          font-size: 30px !important;
         }
 
-        /* Experience Box */
-        .experience-box {
-            padding: 1.5em;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
+        .experience-step {
+          font-size: 0.8em;
         }
 
-        @media (max-width: 768px) {
-            .experience-container {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .experience-step {
-                font-size: 1em;
-            }
-
-            .tick-circle {
-                width: 25px;
-                height: 25px;
-                font-size: 1.2em;
-                margin-right: 5px;
-            }
-
-            .step-line {
-                height: 2px;
-                width: 100%;
-            }
+        .tick-circle {
+          width: 18px;
+          height: 18px;
+          font-size: 0.8em;
         }
 
-        @media (max-width: 500px) {
-            .lg-heading {
-                font-size: 2em;
-                text-align: center;
-            }
-
-            .sm-heading {
-                font-size: 1.5em;
-                text-align: center;
-            }
-
-            .experience-step {
-                font-size: 0.9em;
-            }
-
-            .tick-circle {
-                width: 20px;
-                height: 20px;
-                font-size: 1em;
-            }
-
-            .step-line {
-                height: 1px;
-            }
+        .step-line {
+          height: 1px;
         }
+      }
+
+      @media (max-width: 500px) {
+        .lg-heading {
+          font-size: 2em;
+          text-align: center;
+        }
+
+        .sm-heading {
+          font-size: 1.5em;
+          text-align: center;
+        }
+
+        .experience-step {
+          font-size: 0.9em;
+        }
+
+        .tick-circle {
+          width: 20px;
+          height: 20px;
+          font-size: 1em;
+        }
+
+        .step-line {
+          height: 1px;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="menu-btn">
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
-            <div class="btn-line"></div>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
         </div>
-        <nav class="menu">
-            <div class="menu-branding">
-                <div class="portrait"></div>
-            </div>
-            <ul class="menu-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="work.html">Projects</a>
-                </li>
-                <li class="nav-item current">
-                    <a class="nav-link" href="/">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </nav>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="work.html">Projects</a>
+          </li>
+          <li class="nav-item current">
+            <a class="nav-link" href="/">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main id="blog">
-        <h1 class="lg-heading">
-            My <span class="text-secondary">Experience</span>
-        </h1>
-        <h2 class="sm-heading">Completed an intensive 1year MERN stack development program!</h2>
+      <h1 class="lg-heading">
+        My <span class="text-secondary">Experience</span>
+      </h1>
+      <h2 class="sm-heading">
+        Completed an intensive 1-year MERN stack development program!
+      </h2>
 
-        <!-- Stepper Section -->
-        <div class="experience-container">
-            <div class="experience-step">
-                <div class="tick-circle">✔</div> <b>Started Internship</b>
-            </div>
-            <div class="step-line"></div>
-            <div class="experience-step">
-                <div class="tick-circle">✔</div> <b>Learned Full Stack</b>
-            </div>
-            <div class="step-line"></div>
-            <div class="experience-step">
-                <div class="tick-circle">✔</div> <b>Completed Internship</b>
-            </div>
+      <!-- Stepper Section -->
+      <div class="experience-container">
+        <div class="experience-step">
+          <div class="tick-circle">✔</div>
+          <b>Started Internship</b>
         </div>
+        <div class="step-line"></div>
+        <div class="experience-step">
+          <div class="tick-circle">✔</div>
+          <b>Learned Full Stack</b>
+        </div>
+        <div class="step-line"></div>
+        <div class="experience-step">
+          <div class="tick-circle">✔</div>
+          <b>Completed Internship</b>
+        </div>
+      </div>
 
-        <!-- Experience Box -->
-        <div class="experience-box">
-            <h2 style="color: #de5e3d; font-weight: bold; margin-bottom: 1em;">
-                Full Stack Developer Intern - Weaver's Web Academy
-            </h2>
-            <ul style="color: #555;">
-                <li>
-                    Led the development of dynamic web applications using
-                    <strong>React</strong>, <strong>Bootstrap</strong>,
-                    <strong>JavaScript</strong>, and <strong>Node.js</strong>,
-                    contributing to enhanced user experiences.
-                </li>
-                <li>
-                    Worked with <strong>RESTful APIs</strong>, ensuring seamless frontend-backend communication with a focus on performance and scalability.
-                </li>
-                <li>
-                    Optimized <strong>MongoDB queries</strong> to handle large datasets and improve database performance, gaining hands-on experience with database scalability.
-                </li>
-                <li>
-                    Tackled errors and issues by developing strategies for
-                    <strong>error handling</strong> and improving problem-solving skills.
-                </li>
-                <li>
-                    Deployed projects using <strong>GitHub Pages (github.io)</strong> and <strong>Vercel app</strong>, ensuring seamless delivery and accessibility.
-                </li>
-                <li>
-                    Wrote clean, modular, and maintainable code with a focus on scalability and project sustainability.
-                </li>
-                <li>
-                    Gained experience in full-stack development from frontend UI components to backend logic and database management.
-                </li>
-            </ul>
-        </div>
+      <!-- Experience Box -->
+      <div class="experience-box">
+        <h2 style="color: #de5e3d; font-weight: bold; margin-bottom: 1em">
+          Full Stack Developer Intern - Weaver's Web Academy
+        </h2>
+        <ul style="color: #555">
+          <li>
+            Led the development of dynamic web applications using
+            <strong>React</strong>, <strong>Bootstrap</strong>,
+            <strong>JavaScript</strong>, and <strong>Node.js</strong>,
+            contributing to enhanced user experiences.
+          </li>
+          <li>
+            Worked with <strong>RESTful APIs</strong>, ensuring seamless
+            frontend-backend communication with a focus on performance and
+            scalability.
+          </li>
+          <li>
+            Optimized <strong>MongoDB queries</strong> to handle large datasets
+            and improve database performance, gaining hands-on experience with
+            database scalability.
+          </li>
+          <li>
+            Tackled errors and issues by developing strategies for
+            <strong>error handling</strong> and improving problem-solving
+            skills.
+          </li>
+          <li>
+            Deployed projects using
+            <strong>GitHub Pages (github.io)</strong> and
+            <strong>Vercel app</strong>, ensuring seamless delivery and
+            accessibility.
+          </li>
+          <li>
+            Wrote clean, modular, and maintainable code with a focus on
+            scalability and project sustainability.
+          </li>
+          <li>
+            Gained experience in full-stack development from frontend UI
+            components to backend logic and database management.
+          </li>
+        </ul>
+      </div>
     </main>
 
     <footer id="main-footer">Copyright &copy; Sudipto Dutta 2025</footer>
     <script src="js/main.js"></script>
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/c28f07619f.js" crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/c28f07619f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
