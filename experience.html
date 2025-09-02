@@ -6,7 +6,31 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>Welcome to my Portfolio</title>
     <style>
-      /* Experience Stepper Styling */
+      body {
+        /* background-color: #faf9f7; */
+        font-family: Arial, sans-serif;
+      }
+      strong {
+        margin: 0 !important;
+        padding: 0 !important;
+        letter-spacing: 0 !important;
+        font-weight: 700 !important;
+        display: inline !important;
+      }
+      /* Headings */
+      .lg-heading {
+        text-align: center;
+        margin-top: 0px;
+        font-size: clamp(2rem, 5vw, 3rem);
+      }
+      .sm-heading {
+        text-align: center;
+        margin-bottom: 0px;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color: #666;
+      }
+
+      /* Experience Container (for stepper if used) */
       .experience-container {
         display: flex;
         align-items: center;
@@ -37,6 +61,7 @@
         color: #fff;
         font-size: 1.5em;
         margin-right: 10px;
+        animation: popIn 0.6s ease-in-out;
       }
 
       /* Horizontal Line */
@@ -50,27 +75,118 @@
       .experience-box {
         padding: 1.5em;
         border-radius: 8px;
-        max-width: 800px;
         margin: 0 auto;
+        margin-bottom: 2rem;
+        background: #e3dfca;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        animation: fadeInUp 1s ease-in-out;
+        transition: transform 0.3s ease;
       }
 
+      .experience-box:hover {
+        transform: scale(1.02);
+      }
+
+      .experience-box h2 {
+        color: #de5e3d;
+        font-weight: bold;
+        margin-bottom: 1em;
+        font-size: 1.8rem;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
+      }
+
+      .experience-box h2:hover {
+        color: #fc6f4c;
+        text-shadow: 1px 1px 8px rgba(252, 111, 76, 0.3);
+      }
+
+      /* Animate list items */
+      .experience-box ul li {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        word-wrap: break-word;
+      }
+
+      .experience-box ul li:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .experience-box ul li:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .experience-box ul li:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .experience-box ul li:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      .experience-box ul li:nth-child(5) {
+        animation-delay: 1s;
+      }
+      .experience-box ul li:nth-child(6) {
+        animation-delay: 1.2s;
+      }
+
+      /* Icons for list items */
+      .experience-box ul li i {
+        color: #fc6f4c;
+        font-size: 1.2em;
+        min-width: 25px;
+        flex-shrink: 0;
+      }
+
+      /* Keyframes */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes popIn {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Responsive */
       @media (max-width: 768px) {
         .experience-container {
           flex-direction: column;
           align-items: flex-start;
         }
-
         .experience-step {
           font-size: 1em;
         }
-
         .tick-circle {
           width: 25px;
           height: 25px;
           font-size: 1.2em;
           margin-right: 5px;
         }
-
         .step-line {
           height: 2px;
           width: 100%;
@@ -81,21 +197,17 @@
         .lg-heading {
           font-size: 30px !important;
         }
-
         .sm-heading {
           font-size: 15px !important;
         }
-
         .experience-step {
           font-size: 0.8em;
         }
-
         .tick-circle {
           width: 18px;
           height: 18px;
           font-size: 0.8em;
         }
-
         .step-line {
           height: 1px;
         }
@@ -106,24 +218,48 @@
           font-size: 2em;
           text-align: center;
         }
-
         .sm-heading {
           font-size: 1.5em;
           text-align: center;
         }
-
         .experience-step {
           font-size: 0.9em;
         }
-
         .tick-circle {
           width: 20px;
           height: 20px;
           font-size: 1em;
         }
-
         .step-line {
           height: 1px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* .experience-box {
+          padding: 1em;
+        } */
+        .experience-box h2 {
+          font-size: 1.5rem;
+        }
+        .experience-box ul li {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 1060px) {
+        /* .experience-box {
+          padding: 0.8em;
+        } */
+        .experience-box h2 {
+          font-size: 1.3rem;
+        }
+        .experience-box ul li {
+          font-size: 0.9rem;
+          flex-direction: column;
+        }
+        .experience-box ul li i {
+          font-size: 1rem;
         }
       }
     </style>
@@ -165,73 +301,92 @@
         My <span class="text-secondary">Experience</span>
       </h1>
       <h2 class="sm-heading">
-        Completed an intensive 1-year MERN stack development program!
+        Gained hands-on experience as a Full Stack Developer through
+        <strong>Internship & Project-Based Roles</strong>
       </h2>
-
-      <!-- Stepper Section -->
-      <div class="experience-container">
-        <div class="experience-step">
-          <div class="tick-circle">✔</div>
-          <b>Started Internship</b>
-        </div>
-        <div class="step-line"></div>
-        <div class="experience-step">
-          <div class="tick-circle">✔</div>
-          <b>Learned Full Stack</b>
-        </div>
-        <div class="step-line"></div>
-        <div class="experience-step">
-          <div class="tick-circle">✔</div>
-          <b>Completed Internship</b>
-        </div>
-      </div>
 
       <!-- Experience Box -->
       <div class="experience-box">
-        <h2 style="color: #de5e3d; font-weight: bold; margin-bottom: 1em">
-          Full Stack Developer Intern - Weavers Web Academy
-        </h2>
+        <h2>Full Stack Developer - Vxplore Technologies</h2>
         <ul style="color: #555">
           <li>
-            Led the development of dynamic web applications using
-            <strong>React</strong>, <strong>Bootstrap</strong>,
-            <strong>JavaScript</strong>, and <strong>Node.js</strong>,
+            <i class="fas fa-laptop-code"></i> Developed a performance
+            management suite with
+            <strong>React, TypeScript, TailwindCSS, Mantine UI,</strong>
+            implementing CRUD workflows, dynamic navigation, and real-time
+            filtering.
+          </li>
+          <li>
+            <i class="fas fa-project-diagram"></i> Built a
+            <strong>comprehensive employee management system</strong> using
+            <strong>React & PrimeReact,</strong> including modules for
+            departments, onboarding, attendance, and asset tracking.
+          </li>
+          <li>
+            <i class="fas fa-server"></i> Created a
+            <strong>device management module</strong> in Next.js with advanced
+            search, time-based filtering, and full <strong>CRUD</strong> workflows;
+            <li>implemented a <strong>real-time chat dashboard</strong> for
+            terminal messaging.</li>
+          </li>
+          <li>
+            <i class="fas fa-plug"></i> Integrated <strong>APIs</strong> using
+            <strong>TanStack React Query,</strong> managed state with modular
+            architecture, and designed responsive UIs with
+            <strong>Mantine UI</strong> and <strong>PrimeReact.</strong>
+          </li>
+          <li>
+            <i class="fas fa-database"></i> Contributed to backend tasks using
+            <strong>Express.js</strong> and <strong>Knex.js</strong> for
+            database queries.
+          </li>
+          <li>
+            <i class="fas fa-code-branch"></i> Collaborated with team on feature
+            enhancements and bug fixes using Git and Github.
+          </li>
+        </ul>
+
+        <h2>MERN Stack Developer Intern - Weavers Web Academy</h2>
+        <ul style="color: #555">
+          <li>
+            <i class="fas fa-code"></i> Led the development of dynamic web
+            applications using
+            <strong>React, Bootstrap, JavaScript, and Node.js,</strong>
             contributing to enhanced user experiences.
           </li>
           <li>
-            Worked with <strong>RESTful APIs</strong>, ensuring seamless
-            frontend-backend communication with a focus on performance and
-            scalability.
+            <i class="fas fa-network-wired"></i> Worked with
+            <strong>RESTful APIs,</strong> ensuring seamless frontend-backend
+            communication with a focus on performance and scalability.
           </li>
           <li>
-            Optimized <strong>MongoDB queries</strong> to handle large datasets
-            and improve database performance, gaining hands-on experience with
+            <i class="fas fa-database"></i> Optimized
+            <strong>MongoDB queries</strong> to handle large datasets and
+            improve database performance, gaining hands-on experience with
             database scalability.
           </li>
           <li>
-            Tackled errors and issues by developing strategies for
-            <strong>error handling</strong> and improving problem-solving
-            skills.
+            <i class="fas fa-bug"></i> Tackled errors and issues by developing
+            strategies for <strong>error handling</strong> and improving
+            problem-solving skills.
           </li>
           <li>
-            Deployed projects using
+            <i class="fas fa-cloud-upload-alt"></i> Deployed projects using
             <strong>GitHub Pages (github.io)</strong> and
-            <strong>Vercel app</strong>, ensuring seamless delivery and
+            <strong>Vercel app,</strong> ensuring seamless delivery and
             accessibility.
           </li>
           <li>
-            Wrote clean, modular, and maintainable code with a focus on
-            scalability and project sustainability.
-          </li>
-          <li>
-            Gained experience in full-stack development from frontend UI
-            components to backend logic and database management.
+            <i class="fas fa-check-circle"></i> Wrote clean, modular, and
+            maintainable code with a focus on scalability and project
+            sustainability.
           </li>
         </ul>
       </div>
     </main>
 
     <footer id="main-footer">Copyright &copy; Sudipto Dutta 2025</footer>
+
     <script src="js/main.js"></script>
     <script
       src="https://kit.fontawesome.com/c28f07619f.js"
